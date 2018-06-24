@@ -1,0 +1,38 @@
+{
+  "name": "right-clicker",
+  "version": "0.0.1",
+  "description": "ndx-framework web app",
+  "main": "app/main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "build --win -p always"
+  },
+  "build": {
+    "appId": "com.ndxbxrme.right-clicker",
+    "productName": "Screenclipper"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ndxbxrme/right-clicker"
+  },
+  "author": "ndxbxrme",
+  "license": "MIT",
+  "homepage": "https://github.com/ndxbxrme/right-clicker",
+  "devDependencies": {
+    "electron": "^2.0.3",
+    "electron-builder": "^20.15.1",
+    "grunt": "^1.0.3",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-coffee": "^2.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-pug": "^1.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "load-grunt-tasks": "^4.0.0"
+  },
+  "dependencies": {
+    "electron-rebuild": "^1.7.3",
+    "electron-updater": "^2.21.10",
+    "robot-js": "^2.0.0"
+  }
+}

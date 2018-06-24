@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "file": "main.js",
+  "sourceRoot": "../src/",
+  "sources": [
+    "main.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;EAAA;AAAA,MAAA,aAAA,EAAA,GAAA,EAAA,WAAA,EAAA,cAAA,EAAA,UAAA,EAAA,SAAA,EAAA,IAAA,EAAA,KAAA,EAAA,KAAA,EAAA;;EAEA,CAAA,CAAC,GAAD,EAAM,aAAN,EAAqB,cAArB,CAAA,GAAuC,OAAA,CAAQ,UAAR,CAAvC;;EACA,CAAA,CAAC,WAAD,CAAA,GAAgB,OAAA,CAAQ,kBAAR,CAAhB;;EACA,GAAA,GAAM,OAAA,CAAQ,KAAR;;EACN,IAAA,GAAO,OAAA,CAAQ,MAAR;;EACP,KAAA,GAAQ,OAAA,CAAQ,UAAR;;EAER,SAAA,GAAY;;EACZ,UAAA,GAAa;;EACb,KAAA,GAAQ,QAAA,CAAA,CAAA;WACN,cAAc,CAAC,QAAf,CAAwB,0BAAxB,EAAoD,QAAA,CAAA,CAAA;MAClD,IAAG,CAAI,SAAP;QACE,SAAA,GAAY;eACZ,KAAK,CAAC,WAAN,CAAkB,MAAlB,EAA0B,OAA1B,EAFF;OAAA,MAAA;QAIE,SAAA,GAAY;eACZ,KAAK,CAAC,WAAN,CAAkB,IAAlB,EAAwB,OAAxB,EALF;;IADkD,CAApD;EADM;;EAQR,GAAG,CAAC,EAAJ,CAAO,OAAP,EAAgB,KAAhB;;EACA,GAAG,CAAC,EAAJ,CAAO,mBAAP,EAA4B,QAAA,CAAA,CAAA;WAC1B,OAAO,CAAC,QAAR,KAAoB,QAApB,IAAgC,GAAG,CAAC,IAAJ,CAAA;EADN,CAA5B;;EAEA,GAAG,CAAC,EAAJ,CAAO,WAAP,EAAoB,QAAA,CAAA,CAAA;WAClB,UAAA,IAAc,KAAA,CAAA;EADI,CAApB;AArBA",
+  "sourcesContent": [
+    "'use strict'\r\n\r\n{app, BrowserWindow, globalShortcut} = require 'electron'\r\n{autoUpdater} = require 'electron-updater'\r\nurl = require 'url'\r\npath = require 'path'\r\nrobot = require 'robot-js'\r\n\r\nmouseDown = false\r\nmainWindow = null\r\nready = ->\r\n  globalShortcut.register 'CommandOrControl+Shift+R', ->\r\n    if not mouseDown\r\n      mouseDown = true\r\n      robot.mouseToggle 'down', 'right'\r\n    else\r\n      mouseDown = false\r\n      robot.mouseToggle 'up', 'right'\r\napp.on 'ready', ready\r\napp.on 'window-all-closed', ->\r\n  process.platform is 'darwin' or app.quit()\r\napp.on 'activiate', ->\r\n  mainWindow or ready()"
+  ]
+}
